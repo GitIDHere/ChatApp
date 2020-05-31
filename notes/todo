@@ -1,0 +1,20 @@
+
+- Create the database
+- Plan out the routes
+- Plan out the controllers
+- Set up the file storage
+	(how will this be cached in React?)
+- Create api
+- API Key
+	- Using JWT
+- Set up middleware for auth users poking the endpoints
+- Set up error logging
+	- Exception handling and logging
+- API create tokens
+	- OAuth2??
+- Store user IP to cross reference the requests
+- Create middleware to help with requests coming through
+- Pretty the URL
+- Validate the requests
+- Encrypt the messages??
+- USE WEBSOCKETS TO BROADCAST EVENTS
