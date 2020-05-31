@@ -1,3 +1,11 @@
+- Set up a new project
+- Setup the Git repo
+
+
+
+
+
+-----------------------------------------------------------------
 
 - Create the database
 - Plan out the routes
@@ -18,3 +26,5 @@
 - Validate the requests
 - Encrypt the messages??
 - USE WEBSOCKETS TO BROADCAST EVENTS
+
+- Get the online status of friends

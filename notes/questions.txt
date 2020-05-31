@@ -1,3 +1,7 @@
 What are components and slots?
 
 $request->flashExcept('password');
+
+- What are providers?
+
+- api middleware, like web middleware?

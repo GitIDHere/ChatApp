@@ -12,6 +12,48 @@ php artisan migrate
 
 php artisan migrate:fresh
 
+php artisan make:migration {migration_file_name} --create={table_name}
+
+------------------------------------------------------
+
+php artisan key:generate
+
+php artisan list
+
+php artisan serve
+
+php artisan serve --host=chatapp.com --port=8000
+
+
+php artisan make:controller test/TestController
+
+------------------------------------------------------
+
+-------------- Passport --------------
+
+composer require laravel/passport
+
+php artisan migrate
+
+php artisan passport:install
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -38,7 +38,6 @@ class ClearCache extends Command
     {
 		Artisan::call('config:clear');
 		Artisan::call('cache:clear');
-		Artisan::call('cache:clear');
 
 		exec('composer dump-autoload');
 

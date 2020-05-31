@@ -1,0 +1,56 @@
+[POST] /login
+
+[POST] /logout
+
+[POST] /register
+
+
+
+--------------------------------------------------------------------------------
+- Connect to the other user
+- Send message to the other user
+	- Start a new chat
+
+- Delete message
+
+- Add users to friend list
+
+--------------------------------------------------------------------------------
+
+------------ Authenticated Routes ------------
+
+// Add person to friends list. The other person must accept the request
+[POST] /api/friend
+
+// Get the friend list
+[GET] /api/friends
+
+// Delete a friend
+[DELETE] /api/friend/{friend_id}
+
+// Block a friend. Should not be able find the blocker
+[POST] /api/friend/block/{friend_id}
+
+
+
+// Connect to the other user and create a chat channel
+// make sure that the two people are added as friends
+[POST] /api/chat/connect/{}
+
+// Send a message
+[POST] /api/chat/{chat_token}
+
+
+
+[POST] 
+[GET]
+[DELETE]
+[PUT]
+
+
+
+
+
+
+
+
