@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Repositories\IUserRepository;
+use App\Repositories\Interfaces\IUserRepository;
 use App\Repositories\UserRepository;
-use App\Services\IUserService;
+use App\Services\Interfaces\IUserService;
 use App\Services\UserService;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;

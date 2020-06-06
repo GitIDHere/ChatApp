@@ -29,6 +29,10 @@ php artisan make:controller test/TestController
 
 ------------------------------------------------------
 
+php artisan make:model -m
+
+------------------------------------------------------
+
 -------------- Passport --------------
 
 composer require laravel/passport

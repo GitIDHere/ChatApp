@@ -3,7 +3,7 @@
 use App\User;
 
 
-class UserRepository implements IUserRepository
+class UserRepository implements Interfaces\IUserRepository
 {
 
 	public function __construct()

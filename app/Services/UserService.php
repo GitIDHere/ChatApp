@@ -1,12 +1,12 @@
 <?php namespace App\Services;
 
-use App\Repositories\IUserRepository;
+use App\Repositories\Interfaces\IUserRepository;
 use Carbon\Laravel\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
-class UserService implements IUserService
+class UserService implements Interfaces\IUserService
 {
 	private $_userRepo;
 
@@ -46,11 +46,11 @@ class UserService implements IUserService
 
 	public function update($values, Model $model)
 	{
-		// TODO: Implement update() method.
+
 	}
 
 	public function get($id)
 	{
-		// TODO: Implement get() method.
+
 	}
 }

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\User;
 
-use App\Services\IUserService;
+use App\Services\Interfaces\IUserService;
+use App\Services\LogService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
