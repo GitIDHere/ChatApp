@@ -7,6 +7,10 @@
 
 -----------------------------------------------------------------
 
+- Validate POST fields
+- Hide attributes from JSON
+- General response message
+
 - Create the database
 - Plan out the routes
 - Plan out the controllers

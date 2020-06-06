@@ -14,15 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/login', 'User\UserController@login');
-
-Route::post('/logout', 'User\UserController@logout');
-
 Route::post('/register', 'User\UserController@register');
 
 /*
  * Laravel includes an authentication guard that will automatically validate API tokens on incoming requests.
  */
 Route::middleware('auth:api')->group(function(){
-
+	Route::get('/private', 'User\UserController@private');
 });

@@ -37,7 +37,11 @@ php artisan migrate
 
 php artisan passport:install
 
+Deploying passport to production server
+	https://laravel.com/docs/7.x/passport#deploying-passport
+php artisan passport:keys
 
+php artisan passport:client --password
 
 
 
