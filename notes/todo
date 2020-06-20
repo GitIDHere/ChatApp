@@ -7,6 +7,12 @@
 
 -----------------------------------------------------------------
 
+- If a user has the authority to perform an action
+
+
+
+
+
 - Validate POST fields
 - Hide attributes from JSON
 - General response message

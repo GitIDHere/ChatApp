@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers\User;
 
+use App\Http\Requests\UserRegisterValidator;
 use App\Services\Interfaces\IUserService;
-use App\Services\LogService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,8 +16,12 @@ class UserController extends Controller
 	}
 
 
-
-	public function register(Request $request)
+	/**
+	 * Register a user
+	 * @param Request $request
+	 * @return array
+	 */
+	public function register(UserRegisterValidator $request)
 	{
 		$email = $request->input('email');
 		$password = $request->input('password');
@@ -30,7 +34,5 @@ class UserController extends Controller
 			'time' => time()
 		];
 	}
-
-
 
 }
