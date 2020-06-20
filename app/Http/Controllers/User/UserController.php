@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\User;
 
+use App\Http\Helpers\JSONResponse;
 use App\Http\Requests\UserRegisterValidator;
 use App\Services\Interfaces\IUserService;
 use Illuminate\Http\Request;
@@ -26,13 +27,9 @@ class UserController extends Controller
 		$email = $request->input('email');
 		$password = $request->input('password');
 
-		$success = $this->_userService->registerUser($email, $password);
+		$newUser = $this->_userService->registerUser($email, $password);
 
-		//TODO - Create a class to send JSON responses
-		return [
-			'created' => $success,
-			'time' => time()
-		];
+		return JSONResponse::create($newUser);
 	}
 
 }

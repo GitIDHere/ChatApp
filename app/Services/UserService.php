@@ -16,6 +16,13 @@ class UserService extends BaseService implements Interfaces\IUserService
 	}
 
 
+	/**
+	 * Register a new user
+	 *
+	 * @param $email
+	 * @param $password
+	 * @return mixed
+	 */
 	public function registerUser($email, $password)
 	{
 		$userExistParams[] = [
@@ -35,6 +42,6 @@ class UserService extends BaseService implements Interfaces\IUserService
 		//Save the user
 		$user = $this->_userRepo->createUser($email, $hashedPass);
 
-		return ($user);
+		return $user;
 	}
 }
