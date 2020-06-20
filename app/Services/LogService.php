@@ -1,37 +1,22 @@
 <?php namespace App\Services;
 
-use App\Repositories\Interfaces\LogRepository;
+use App\Repositories\LogRepository;
 use Illuminate\Database\Eloquent\Model;
 
-class LogService
+class LogService extends BaseService
 {
-
-	private $_logRepo;
-
 	public function __construct(LogRepository $logRepository)
 	{
-		$this->_logRepo = $logRepository;
+		parent::__construct($logRepository);
 	}
 
 
-	public static function create($logValues)
-	{
-		LogRepository::addEntry($logValues);
+	/**
+	 * A simple way to add a log entry
+	 * @param $values
+	 */
+	public static function addLog($values) {
+		LogRepository::addEntry($values);
 	}
 
-
-	public function delete($id)
-	{
-		// TODO: Implement delete() method.
-	}
-
-	public function update($values, Model $model)
-	{
-		// TODO: Implement update() method.
-	}
-
-	public function get($id)
-	{
-		// TODO: Implement get() method.
-	}
 }

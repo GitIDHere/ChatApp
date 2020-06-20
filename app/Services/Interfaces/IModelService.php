@@ -1,15 +1,12 @@
 <?php namespace App\Services\Interfaces;
 
-
-use Illuminate\Database\Eloquent\Model;
-
 interface IModelService
 {
 	public function create($values);
 
 	public function delete($id);
 
-	public function update($values, Model $model);
+	public function update(int $id, array $values);
 
 	public function get($id);
 }

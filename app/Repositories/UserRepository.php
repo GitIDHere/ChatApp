@@ -3,12 +3,12 @@
 use App\User;
 
 
-class UserRepository implements Interfaces\IUserRepository
+class UserRepository extends BaseRepository implements Interfaces\IUserRepository
 {
 
-	public function __construct()
+	public function __construct(User $user)
 	{
-
+		parent::__construct($user);
 	}
 
 
@@ -31,13 +31,4 @@ class UserRepository implements Interfaces\IUserRepository
 		}
 	}
 
-
-	/**
-	 * @param $email
-	 * @return bool
-	 */
-	public function exists($email)
-	{
-		return User::query()->where('email', '=', $email)->exists();
-	}
 }

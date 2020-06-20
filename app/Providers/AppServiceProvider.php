@@ -16,6 +16,8 @@ class AppServiceProvider extends ServiceProvider
 
 	public $bindings = [
 		IUserService::class => UserService::class,
+
+
 		IUserRepository::class => UserRepository::class,
 	];
 

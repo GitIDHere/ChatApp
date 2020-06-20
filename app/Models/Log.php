@@ -12,8 +12,7 @@ class Log extends Model
 		'severity',
 		'ip',
 		'trace',
-		'url',
-		//'created',
+		'url'
 	];
 
 
