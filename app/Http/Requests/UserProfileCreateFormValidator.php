@@ -1,6 +1,5 @@
 <?php namespace App\Http\Requests;
 
-use App\Models\UserProfile;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserProfileCreateFormValidator extends FormRequest
@@ -12,9 +11,7 @@ class UserProfileCreateFormValidator extends FormRequest
      */
     public function authorize()
     {
-    	//TODO - Add policy
-		$profile = UserProfile::where('user_id', $this->user()->id)->first();
-        return (empty($profile));
+        return $this->user()->can('createUserProfile', $this->user());
     }
 
     /**
