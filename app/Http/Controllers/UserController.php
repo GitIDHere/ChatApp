@@ -4,6 +4,7 @@ use App\Http\Helpers\JSONResponse;
 use App\Http\Requests\UserRegisterValidator;
 use App\Services\Interfaces\IUserService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -16,14 +17,23 @@ class UserController extends Controller
 	}
 
 
-
-	//TODO - Request to delete the account
-
+	/**
+	 * Delete an account
+	 *
+	 * @param Request $request
+	 * @return array
+	 */
+	public function deleteAccount(Request $request)
+	{
+		$result = $this->_userService->delete(Auth::id());
+		$isDeleted = ($result ? true : false);
+		return JSONResponse::create(['success' => $isDeleted]);
+	}
 
 
 	/**
 	 * Register a user
-	 * @param Request $request
+	 * @param UserRegisterValidator $request
 	 * @return array
 	 */
 	public function register(UserRegisterValidator $request)

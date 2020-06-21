@@ -57,7 +57,7 @@ class BaseRepository implements IModelRepository
 	 */
 	public function delete($id)
 	{
-		$this->_model::destroy($id);
+		return $this->_model::destroy($id);
 	}
 
 
