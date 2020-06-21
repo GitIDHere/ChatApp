@@ -1,6 +1,6 @@
 <?php namespace App\Repositories;
 
-use App\User;
+use App\Models\User;
 
 
 class UserRepository extends BaseRepository implements Interfaces\IUserRepository
@@ -27,7 +27,7 @@ class UserRepository extends BaseRepository implements Interfaces\IUserRepositor
 			return $user;
 		} else {
 			//TODO - throw exception
-			return false;
+			return null;
 		}
 	}
 

@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/register', 'User\UserController@register');
+Route::post('/register', 'UserController@register');
 
 /*
  * Laravel includes an authentication guard that will automatically validate API tokens on incoming requests.
  */
-Route::middleware('auth:api')->group(function(){
-
+Route::middleware('auth:api')->group(function()
+{
+	Route::post('/create_profile', 'UserProfileController@createUserProfile');
 });

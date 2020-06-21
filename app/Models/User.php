@@ -1,6 +1,5 @@
-<?php namespace App;
+<?php namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -15,7 +14,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password',
+        'email',
+		'password',
+		//Todo - last_login
     ];
 
     /**
@@ -35,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+	/**
+	 * User has one UserProfile
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 */
+    public function userProfile()
+	{
+		return $this->hasOne('App\Models\UserProfile');
+	}
+
 }

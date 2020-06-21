@@ -1,11 +1,13 @@
 <?php namespace App\Services;
 
+use App\Repositories\Interfaces\ILogRepository;
 use App\Repositories\LogRepository;
-use Illuminate\Database\Eloquent\Model;
+use App\Services\Interfaces\ILogService;
 
-class LogService extends BaseService
+class LogService extends BaseService implements ILogService
 {
-	public function __construct(LogRepository $logRepository)
+
+	public function __construct(ILogRepository $logRepository)
 	{
 		parent::__construct($logRepository);
 	}

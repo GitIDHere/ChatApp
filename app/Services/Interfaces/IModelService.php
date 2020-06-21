@@ -2,8 +2,6 @@
 
 interface IModelService
 {
-	public function create($values);
-
 	public function delete($id);
 
 	public function update(int $id, array $values);

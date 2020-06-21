@@ -1,10 +1,9 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace App\Http\Controllers;
 
 use App\Http\Helpers\JSONResponse;
 use App\Http\Requests\UserRegisterValidator;
 use App\Services\Interfaces\IUserService;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -15,6 +14,11 @@ class UserController extends Controller
 	{
 		$this->_userService = $userService;
 	}
+
+
+
+	//TODO - Request to delete the account
+
 
 
 	/**

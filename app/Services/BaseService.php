@@ -12,15 +12,6 @@ class BaseService implements Interfaces\IModelService
 	}
 
 	/**
-	 * @param $values
-	 * @return mixed
-	 */
-	public function create($values)
-	{
-		return $this->_repo->create($values);
-	}
-
-	/**
 	 * @param $id
 	 * @return mixed
 	 */

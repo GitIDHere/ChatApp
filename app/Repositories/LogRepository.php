@@ -2,7 +2,7 @@
 
 use App\Models\Log;
 
-class LogRepository extends BaseRepository implements Interfaces\IModelRepository
+class LogRepository extends BaseRepository implements Interfaces\ILogRepository
 {
 	public function __construct(Log $log)
 	{

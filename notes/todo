@@ -1,21 +1,25 @@
 - Set up a new project
 - Setup the Git repo
-
+- General response message
 
 
 
 
 -----------------------------------------------------------------
 
+
+- User Profile
+- Delete account
+
 - If a user has the authority to perform an action
+	- Scopes
 
-
-
+- Autoload the profile pic as a file object when the record is retrieved
 
 
 - Validate POST fields
 - Hide attributes from JSON
-- General response message
+
 
 - Create the database
 - Plan out the routes
