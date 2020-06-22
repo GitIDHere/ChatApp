@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Helpers\JSONResponse;
+use App\Http\Helpers\JsonResponse;
 use App\Http\Requests\UserRegisterValidator;
 use App\Services\Interfaces\IUserService;
 use Illuminate\Http\Request;
@@ -27,7 +27,7 @@ class UserController extends Controller
 	{
 		$result = $this->_userService->delete(Auth::id());
 		$isDeleted = ($result ? true : false);
-		return JSONResponse::create(['success' => $isDeleted]);
+		return JsonResponse::resourceResponse(['success' => $isDeleted]);
 	}
 
 
@@ -43,7 +43,7 @@ class UserController extends Controller
 
 		$newUser = $this->_userService->registerUser($email, $password);
 
-		return JSONResponse::create($newUser);
+		return JsonResponse::resourceResponse($newUser);
 	}
 
 }

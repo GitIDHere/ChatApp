@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Response;
+use Illuminate\Support\Arr;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -51,5 +53,38 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         return parent::render($request, $exception);
+    }
+
+
+	/**
+	 * @param Throwable $e
+	 * @return array
+	 */
+    protected function convertExceptionToArray(Throwable $e)
+    {
+    	$code = $this->isHttpException($e) ? $e->getCode() : 500;
+
+    	$statusTxt = (isset(Response::$statusTexts[$code]) ? Response::$statusTexts[$code] : 500);
+
+    	$isDebugMode = config('app.debug');
+
+		$errorData = [
+			'status' => $statusTxt,
+			'message' => $e->getMessage(),
+			'code' => $code,
+			'time' => time()
+		];
+
+    	if ($isDebugMode)
+    	{
+    		$errorData['file'] = $e->getFile();
+    		$errorData['line'] = $e->getLine();
+    		$errorData['exception'] = get_class($e);
+    		$errorData['trace'] = collect($e->getTrace())->map(function ($trace) {
+                return Arr::except($trace, ['args']);
+            })->all();
+		}
+
+    	return $errorData;
     }
 }

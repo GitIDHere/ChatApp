@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Helpers\JSONResponse;
+use App\Http\Helpers\JsonResponse;
 use App\Http\Requests\UserProfileCreateFormValidator;
 use App\Services\Interfaces\IUserProfileService;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +34,7 @@ class UserProfileController extends Controller
 
 		$userProfile = $this->_userProfileService->createProfile($userId, $name, $description);
 
-		return JSONResponse::create($userProfile);
+		return JsonResponse::resourceResponse($userProfile);
 	}
 
 

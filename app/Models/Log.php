@@ -8,9 +8,7 @@ class Log extends Model
 
 
 	protected $fillable = [
-		'type',
 		'severity',
-		'ip',
 		'trace',
 		'url'
 	];

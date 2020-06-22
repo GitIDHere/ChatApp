@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Helpers\ErrorLogger;
 use App\Repositories\Interfaces\ILogRepository;
 use App\Repositories\Interfaces\IUserProfileRepository;
 use App\Repositories\Interfaces\IUserRepository;
@@ -17,6 +18,7 @@ use App\Services\UserService;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
+use Psr\Log\LoggerInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
 			ILogRepository::class => LogRepository::class,
 			IUserRepository::class => UserRepository::class,
 			IUserProfileRepository::class => UserProfileRepository::class,
+			LoggerInterface::class => ErrorLogger::class,
 	];
 
 	/**
