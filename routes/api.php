@@ -21,7 +21,8 @@ Route::post('/register', 'UserController@register');
  */
 Route::middleware('auth:api')->group(function()
 {
-	Route::post('/create_profile', 'UserProfileController@createUserProfile');
+	Route::post('/profile/create', 'UserProfileController@createUserProfile');
+	Route::post('/profile/update', 'UserProfileController@updateUserProfile');
 
 	Route::post('/user/delete', 'UserController@deleteAccount');
 });

@@ -1,5 +1,6 @@
 <?php namespace App\Repositories;
 
+use App\Exceptions\User\ResourceCreateException;
 use App\Models\User;
 
 
@@ -16,6 +17,7 @@ class UserRepository extends BaseRepository implements Interfaces\IUserRepositor
 	 * @param $email
 	 * @param $password
 	 * @return User|bool
+	 * @throws ResourceCreateException
 	 */
 	public function createUser($email, $password)
 	{
@@ -26,8 +28,7 @@ class UserRepository extends BaseRepository implements Interfaces\IUserRepositor
 		if($user->save()) {
 			return $user;
 		} else {
-			//TODO - throw exception
-			return null;
+			throw new ResourceCreateException("Failed to create account");
 		}
 	}
 

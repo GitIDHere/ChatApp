@@ -2,7 +2,7 @@
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserProfileCreateFormValidator extends FormRequest
+class UpdateUserProfileValidator extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -11,7 +11,7 @@ class UserProfileCreateFormValidator extends FormRequest
      */
     public function authorize()
     {
-        return $this->user()->can('createUserProfile', $this->user());
+    	return $this->user()->can('updateUserProfile', $this->user());
     }
 
     /**
@@ -22,8 +22,8 @@ class UserProfileCreateFormValidator extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|between:2,50',
-            'description' => 'nullable|max:550',
+            'name' => 'nullable|string|between:2,50',
+            'description' => 'nullable|string|max:550',
         ];
     }
 }

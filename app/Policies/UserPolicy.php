@@ -8,15 +8,25 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
+	/**
+	 * @param User $user
+	 * @return mixed
+	 */
+    public function createUserProfile(User $user)
+	{
+		$userProfileRecord = UserProfile::where('user_id', $user->id)->first();
+		return empty($userProfileRecord);
+	}
+
 
 	/**
 	 * @param User $user
-	 * @param UserProfile $userProfile
-	 * @return mixed
+	 * @return bool
 	 */
-    public function createUserProfile(User $user) {
-		$userProfileRecord = UserProfile::where('user_id', $user->id)->first();
-		return (empty($userProfileRecord));
+	public function updateUserProfile(User $user)
+	{
+    	$userProfileRecord = UserProfile::where('user_id', $user->id)->first();
+    	return (empty($userProfileRecord) == false);
 	}
 
 }

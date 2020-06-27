@@ -1,5 +1,6 @@
 <?php namespace App\Repositories;
 
+use App\Exceptions\User\ResourceCreateException;
 use App\Models\UserProfile;
 
 class UserProfileRepository extends BaseRepository implements Interfaces\IUserProfileRepository
@@ -29,6 +30,7 @@ class UserProfileRepository extends BaseRepository implements Interfaces\IUserPr
 	 * @param string $name
 	 * @param string|null $desc
 	 * @return UserProfile|null
+	 * @throws ResourceCreateException
 	 */
 	public function createProfile(int $userId, string $name, string $desc = null)
 	{
@@ -41,8 +43,7 @@ class UserProfileRepository extends BaseRepository implements Interfaces\IUserPr
 		if($userProfile->save()) {
 			return $userProfile;
 		} else {
-			//TODO - throw exception
-			return null;
+			throw new ResourceCreateException("Failed to create user profile");
 		}
 	}
 }
